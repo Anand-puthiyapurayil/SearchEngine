@@ -1,0 +1,23 @@
+data:
+  combined_dataset: data/processed/combined_dataset.csv
+  products_csv: data/raw/products.csv
+  services_csv: data/raw/services.csv
+embeddings:
+  products_embeddings: data/embeddings/products_embeddings.npy
+  services_embeddings: data/embeddings/services_embeddings.npy
+faiss:
+  index_type: IndexFlatIP
+  products_index: data/indices/products_index.faiss
+  products_mapping: data/indices/products_mapping.csv
+  services_index: data/indices/services_index.faiss
+  services_mapping: data/indices/services_mapping.csv
+  top_k: 15
+model:
+  base: sentence-transformers/all-MiniLM-L6-v2
+  batch_size: 8
+  fine_tuned: models/fine-tuned-sbert-triplet_20241224_171119_20241226_123849
+  num_epochs: 3
+price_percentiles:
+  q1: 5680.25
+  q2: 9409.5
+  q3: 13541.5
